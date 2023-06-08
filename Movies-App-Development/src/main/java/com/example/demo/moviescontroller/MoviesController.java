@@ -60,7 +60,7 @@ public class MoviesController {
 		MoviesDto addnewMovies = moviesServiceInterface.addnewMovies(moviesDto);
 		return addnewMovies!=null?ResponseEntity.status(HttpStatus.CREATED).body(SuccessMessagesForMovies.MOVIES_ADDED_SUCCESSFULLY):ResponseEntity.status(HttpStatus.CREATED).body(ErrorMessagesForMovies.MOVIES_NOT_SAVED);
 	}
-	
+	/*API to get the list of the movies whose average Rating is more then 6*/
 	@GetMapping(value = UrlPaths.GET_THE_MOVIES_WHOSE_AVERAGE_RATING_MORE_THEN_SIX)
 	public ResponseEntity<List<MoviesDto>> getTheMoviesWhoseAverageRatingIsMoreThenSix(){
 		List<MoviesDto> theMoviesRatingMoreThenSix = moviesServiceInterface.getTheMoviesRatingMoreThenSix();
